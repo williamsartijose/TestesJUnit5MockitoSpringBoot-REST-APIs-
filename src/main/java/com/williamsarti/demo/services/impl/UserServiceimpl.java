@@ -1,5 +1,6 @@
 package com.williamsarti.demo.services.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class UserServiceimpl  implements UserService{
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	
+	public List<User> findAll() {
+        return repository.findAll();
+    }
 
 
 }
